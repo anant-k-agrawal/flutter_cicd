@@ -11,6 +11,6 @@ test_task:
 build_task:
   pub_cache:
     folder: ~/.pub-cache
-  test_script:
+  build_script:
     - flutter -v build apk --debug
 #    - flutter -v build ios --debug --no-codesign
