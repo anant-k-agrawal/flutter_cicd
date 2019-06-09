@@ -13,4 +13,5 @@ build_task:
     folder: ~/.pub-cache
   build_script:
     - flutter -v build apk --debug
-#    - flutter -v build ios --debug --no-codesign
+  build_script:
+    - flutter -v build ios --debug --no-codesign
