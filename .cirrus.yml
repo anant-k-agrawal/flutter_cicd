@@ -11,6 +11,8 @@ test_task:
 build_task:
   pub_cache:
     folder: ~/.pub-cache
+  osx_instance:
+    image: mojave-xcode-10.1
   build_script:
-    - flutter -v build apk --debug
+#    - flutter -v build apk --debug
     - flutter -v build ios --debug --no-codesign
