@@ -2,15 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
-
+      - image: cirrusci/flutter
     steps:
       - checkout
-
       - run:
-          name: Greeting
-          command: echo Hello, world.
-
-      - run:
-          name: Print the Current Time
-          command: date
+        - name: Get properties
+        - command: |
+                  wget $GOOGLESERVICESJSON -P android/app
+      - run: flutter doctor
+      - run: flutter test 
+      - run: flutter -v build apk
