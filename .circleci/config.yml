@@ -1,0 +1,24 @@
+version: 2
+jobs:
+  build_android:
+    docker:
+      - image: cirrusci/flutter
+    steps:
+      - checkout
+      - run: flutter doctor
+      - run: flutter test
+      - run: flutter -v build apk --debug
+#  build_ios:
+#    docker:
+#      - image: cirrusci/flutter
+#    steps:
+#      - checkout
+#      - run: flutter doctor
+#      - run: flutter test
+#      - run: flutter -v build ios --debug --no-codesign
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build_android
+#      - build_ios
