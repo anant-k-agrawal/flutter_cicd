@@ -5,8 +5,8 @@ jobs:
       - image: cirrusci/flutter
     steps:
       - checkout
-      - run: flutter doctor
-      - run: flutter test
+      - run: flutter doctor -v
+      - run: flutter test --coverage
       - run: flutter -v build apk --debug
 #  build_ios:
 #    docker:
