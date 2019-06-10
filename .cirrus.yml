@@ -20,8 +20,8 @@ task:
     - sw_vers
     - defaults read loginwindow SystemVersionStampAsString
   setup_script:
-    - flutter -v build ios --debug --no-codesign
-    - flutter -v build ios --debug --no-codesign
+    - flutter -v doctor
+    - flutter update-packages
     - flutter config --no-analytics
     - flutter config
   test_script:
