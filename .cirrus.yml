@@ -7,7 +7,7 @@ osx_instance:
 
 task:
   script: echo "Hello World from macOS!"
-  - sw_vers
+    - sw_vers
 
 #test_task:
 #  pub_cache:
