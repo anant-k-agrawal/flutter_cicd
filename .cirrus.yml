@@ -7,10 +7,12 @@ osx_instance:
 
 task:
   script: echo "Hello World from macOS!"
-#  setup_script:
-#    - system_profiler SPSoftwareDataType
-#    - sw_vers
-#    - defaults read loginwindow SystemVersionStampAsString
+  setup_script:
+    - system_profiler SPSoftwareDataType
+    - sw_vers
+    - defaults read loginwindow SystemVersionStampAsString
+    - flutter -v doctor
+    - bin/flutter -v doctor
 
 #test_task:
 #  pub_cache:
