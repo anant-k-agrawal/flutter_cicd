@@ -1,5 +1,7 @@
 container:
   image: cirrusci/flutter:latest
+  cpu: 8
+  memory: 16
 
 android_task:
   name: android_build
