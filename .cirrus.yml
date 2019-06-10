@@ -1,29 +1,30 @@
 container:
   image: cirrusci/flutter:latest
 
-test_task:
-  pub_cache:
-    folder: ~/.pub-cache
-  setup_script:
-    - flutter doctor -v
-  test_script:
-    - flutter test --coverage
-  build_script:
-    - flutter -v build apk --debug
-
-#task:
+#test_task:
 #  pub_cache:
 #    folder: ~/.pub-cache
-#  env:
-#    # Name the SDK directory to include a space so that we constantly
-#    # test path names with spaces in them.
-#    CIRRUS_WORKING_DIR: "/tmp/flutter sdk"
-#  osx_instance:
-#    image: mojave-xcode-10.1
 #  setup_script:
-#    - bin/flutter config --no-analytics
-#    - bin/flutter doctor -v
-#    - bin/flutter update-packages
+#    - flutter doctor -v
+#  test_script:
+#    - flutter test --coverage
+#  build_script:
+#    - flutter -v build apk --debug
+
+task:
+  osx_instance:
+#    image: mojave-xcode-10.1
+    image: mojave-xcode-10.2-flutter
+  pub_cache:
+    folder: ~/.pub-cache
+  env:
+    # Name the SDK directory to include a space so that we constantly
+    # test path names with spaces in them.
+    CIRRUS_WORKING_DIR: "/tmp/flutter sdk"
+  setup_script:
+    - bin/flutter config --no-analytics
+    - bin/flutter doctor -v
+    - bin/flutter update-packages
 #  build_script:
 #    - flutter -v build apk --debug
 #    - flutter -v build ios --debug --no-codesign
