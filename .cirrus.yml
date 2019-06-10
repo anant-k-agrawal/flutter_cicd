@@ -6,11 +6,6 @@ osx_instance:
 
 task:
   script: echo "Hello World from macOS!"
-  setup_script:
-    - system_profiler SPSoftwareDataType
-    - sw_vers
-    - defaults read loginwindow SystemVersionStampAsString
-    - flutter -v doctor
   use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true'
   pub_cache:
     folder: ~/.pub-cache
@@ -21,6 +16,9 @@ task:
     - git fetch origin
     - git fetch origin develop # To set FETCH_HEAD
   setup_script:
+    - system_profiler SPSoftwareDataType
+    - sw_vers
+    - defaults read loginwindow SystemVersionStampAsString
     - flutter config --no-analytics
     - flutter update-packages
     - flutter -v doctor
