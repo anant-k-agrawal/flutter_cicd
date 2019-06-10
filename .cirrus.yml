@@ -27,7 +27,8 @@ task:
   test_script:
     - flutter test --coverage
   build_script:
-    - flutter -v build ios --debug --no-codesign
+#    - flutter -v build ios --debug --no-codesign
+    - flutter -v build ios --release --no-codesign
 
 #test_task:
 #  pub_cache:
