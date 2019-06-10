@@ -1,7 +1,32 @@
 container:
   image: cirrusci/flutter:latest
 
-task:
+android_task:
+  name: android_build
+  script: echo "Hello World from Linux!"
+  use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true'
+  pub_cache:
+    folder: ~/.pub-cache
+  print_date_script:
+    - date
+  git_fetch_script:
+    - git clean -xfd
+    - git fetch origin
+    - git fetch origin develop # To set FETCH_HEAD
+  env_script:
+    - lsb_release -a
+    - uname -a
+  setup_script:
+    - flutter -v doctor
+    - flutter update-packages
+    - flutter config --no-analytics
+    - flutter config
+  test_script:
+    - flutter test --coverage
+  build_script:
+    - flutter -v build apk --release
+
+osx_task:
   name: osx_build
   osx_instance:
     image: mojave-xcode-10.2-flutter
@@ -16,6 +41,7 @@ task:
     - git fetch origin
     - git fetch origin develop # To set FETCH_HEAD
   env_script:
+    - uname -a
     - system_profiler SPSoftwareDataType
     - sw_vers
     - defaults read loginwindow SystemVersionStampAsString
