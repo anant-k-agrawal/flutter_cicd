@@ -22,7 +22,7 @@ task:
 #    # test path names with spaces in them.
 #    CIRRUS_WORKING_DIR: "/tmp/flutter sdk"
   setup_script:
-    - bin/flutter config --no-analytics
+#    - bin/flutter config --no-analytics
     - bin/flutter doctor -v
     - bin/flutter update-packages
   build_script:
