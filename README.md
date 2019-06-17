@@ -7,3 +7,4 @@ Flutter CICD Boilerplate Template
 [![Coverage Status](https://coveralls.io/repos/github/anant-k-agrawal/flutter_cicd/badge.svg?branch=develop)](https://coveralls.io/github/anant-k-agrawal/flutter_cicd?branch=develop)
 [![Codemagic build status](https://api.codemagic.io/apps/5d05468037a0954565717e91/5d05468037a0954565717e90/status_badge.svg)](https://codemagic.io/apps/5d05468037a0954565717e91/5d05468037a0954565717e90/latest_build)
 ![Release](https://img.shields.io/pub/v/flutter_cicd.svg)
+[![Codeship Status for anant-k-agrawal/flutter_cicd](https://app.codeship.com/projects/a19d18d0-7323-0137-aaa9-5af050f70adb/status?branch=develop)](https://app.codeship.com/projects/348686)
